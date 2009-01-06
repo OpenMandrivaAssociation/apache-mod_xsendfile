@@ -7,7 +7,7 @@
 Summary:	Process X-SENDFILE header cgi/scripts may set
 Name:		apache-%{mod_name}
 Version:	0.9
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		System/Servers
 License:	Apache License
 URL:		http://celebnamer.celebworld.ws/stuff/mod_xsendfile/
