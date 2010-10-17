@@ -6,12 +6,12 @@
 
 Summary:	Process X-SENDFILE header cgi/scripts may set
 Name:		apache-%{mod_name}
-Version:	0.9
-Release:	%mkrel 9
+Version:	0.12
+Release:	%mkrel 1
 Group:		System/Servers
 License:	Apache License
-URL:		http://celebnamer.celebworld.ws/stuff/mod_xsendfile/
-Source0:	http://celebnamer.celebworld.ws/stuff/mod_xsendfile/mod_xsendfile-%{version}.tar.gz
+URL:		https://tn123.org/mod_xsendfile/
+Source0:	https://tn123.org/mod_xsendfile/mod_xsendfile-%{version}.tar.gz
 Source1:	%{mod_conf}
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
@@ -41,16 +41,13 @@ cp %{SOURCE1} %{mod_conf}
 %{_sbindir}/apxs -c %{mod_name}.c
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/apache-extramodules
 install -d %{buildroot}%{_sysconfdir}/httpd/modules.d
 
 install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache-extramodules/
 install -m0644 %{mod_conf} %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
-
-install -d %{buildroot}%{_var}/www/html/addon-modules
-ln -s ../../../..%{_docdir}/%{name}-%{version} %{buildroot}%{_var}/www/html/addon-modules/%{name}-%{version}
 
 %post
 if [ -f %{_var}/lock/subsys/httpd ]; then
@@ -65,13 +62,10 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Readme.html
+%doc docs/Readme.html
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
 %attr(0755,root,root) %{_libdir}/apache-extramodules/%{mod_so}
-%{_var}/www/html/addon-modules/*
-
-
