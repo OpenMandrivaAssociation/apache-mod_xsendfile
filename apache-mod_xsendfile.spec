@@ -7,7 +7,7 @@
 Summary:	Process X-SENDFILE header cgi/scripts may set
 Name:		apache-%{mod_name}
 Version:	0.12
-Release:	2
+Release:	3
 Group:		System/Servers
 License:	Apache License
 URL:		https://tn123.org/mod_xsendfile/
