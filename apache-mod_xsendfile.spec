@@ -1,5 +1,5 @@
 #Module-Specific definitions
-%define apache_version 2.2.0
+%define apache_version 2.4.69
 %define mod_name mod_xsendfile
 %define mod_conf A58_%{mod_name}.conf
 %define mod_so %{mod_name}.so
@@ -7,7 +7,7 @@
 Summary:	Process X-SENDFILE header cgi/scripts may set
 Name:		apache-%{mod_name}
 Version:	0.12
-Release:	3
+Release:	4
 Group:		System/Servers
 License:	Apache License
 URL:		https://tn123.org/mod_xsendfile/
