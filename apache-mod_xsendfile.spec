@@ -7,7 +7,7 @@
 Summary:	Process X-SENDFILE header cgi/scripts may set
 Name:		apache-%{mod_name}
 Version:	0.12
-Release:	4
+Release:	5
 Group:		System/Servers
 License:	Apache License
 URL:		https://tn123.org/mod_xsendfile/
@@ -65,69 +65,3 @@ fi
 %doc docs/Readme.html
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
 %attr(0755,root,root) %{_libdir}/apache-extramodules/%{mod_so}
-
-
-%changelog
-* Sun Oct 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.12-2mdv2011.0
-+ Revision: 588106
-- rebuild
-
-* Sun Oct 17 2010 Oden Eriksson <oeriksson@mandriva.com> 0.12-1mdv2011.0
-+ Revision: 586246
-- 0.12
-
-* Mon Mar 08 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9-9mdv2010.1
-+ Revision: 516282
-- rebuilt for apache-2.2.15
-
-* Sat Aug 01 2009 Oden Eriksson <oeriksson@mandriva.com> 0.9-8mdv2010.0
-+ Revision: 406689
-- rebuild
-
-* Tue Jan 06 2009 Oden Eriksson <oeriksson@mandriva.com> 0.9-7mdv2009.1
-+ Revision: 326280
-- rebuild
-
-* Mon Jul 14 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9-6mdv2009.0
-+ Revision: 235136
-- rebuild
-
-* Thu Jun 05 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9-5mdv2009.0
-+ Revision: 215679
-- fix rebuild
-- fix buildroot
-
-* Fri Mar 07 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9-4mdv2008.1
-+ Revision: 181989
-- rebuild
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - fix description-line-too-long
-    - kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Sat Sep 08 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9-3mdv2008.0
-+ Revision: 82708
-- rebuild
-
-
-* Sat Mar 10 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9-2mdv2007.1
-+ Revision: 140781
-- rebuild
-
-* Sat Feb 10 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9-1mdv2007.1
-+ Revision: 118791
-- 0.9
-
-* Thu Nov 09 2006 Oden Eriksson <oeriksson@mandriva.com> 0.8-2mdv2007.1
-+ Revision: 79565
-- Import apache-mod_xsendfile
-
-* Mon Aug 07 2006 Oden Eriksson <oeriksson@mandriva.com> 0.8-2mdv2007.0
-- rebuild
-
-* Mon Apr 03 2006 Oden Eriksson <oeriksson@mandriva.com> 0.8-1mdk
-- initial Mandriva package
-
